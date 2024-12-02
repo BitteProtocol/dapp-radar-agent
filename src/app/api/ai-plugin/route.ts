@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 const key = JSON.parse(process.env.BITTE_KEY || "{}");
-const config = JSON.parse(process.env.BITTE_CONFIG || "{}");
 
 if (!key?.accountId) {
   console.error("no account");
@@ -17,7 +16,7 @@ export async function GET() {
     },
     servers: [
       {
-        url: config.url,
+        url: 'https://dapp-radar-agent.vercel.app',
       },
     ],
     "x-mb": {
